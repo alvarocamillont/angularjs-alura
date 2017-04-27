@@ -1,4 +1,4 @@
 /* global angular */
 /* Módulo inicial da aplicação */
-angular.module('alurapic', [])
+angular.module('alurapic', ['minhasDiretivas'])
 
