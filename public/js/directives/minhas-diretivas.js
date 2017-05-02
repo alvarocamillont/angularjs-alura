@@ -16,3 +16,19 @@ angular.module('minhasDiretivas', [])
 
       return ddo
     })
+     .directive('minhaFoto', function () {
+        /* objetos directive data object */
+       var ddo = {}
+        /* Utilizado como atributo ou elemento */
+       ddo.restrict = 'AE'
+       ddo.transclude = true
+
+       ddo.scope = {
+         url: '@',
+         titulo: '@'
+       }
+
+       ddo.templateUrl = 'js/directives/minha-foto.html'
+
+       return ddo
+     })
