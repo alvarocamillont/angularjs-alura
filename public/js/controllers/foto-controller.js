@@ -1,8 +1,10 @@
 /* global angular */
 
-angular.module('alurapic').controller('FotoController', function ($scope, $http, $routeParams) {
+angular.module('alurapic').controller('FotoController', function ($scope, $http, $routeParams, $resource) {
   $scope.fotos = {}
   $scope.mensagem = ''
+
+  var recursoFoto = $resource('v1/fotos/:fotoId')
 
   if ($routeParams.fotoId) {
     $http.get(`v1/fotos/${$routeParams.fotoId}`)
