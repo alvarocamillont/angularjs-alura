@@ -32,3 +32,18 @@ angular.module('minhasDiretivas', [])
 
        return ddo
      })
+       .directive('meuBotaoPerigo', function () {
+        /* objetos directive data object */
+         var ddo = {}
+        /* Utilizado como atributo ou elemento */
+         ddo.restrict = 'E'
+
+         ddo.scope = {
+           nome: '@',
+           acao: '&'
+         }
+
+         ddo.template = '<button ng-click="acao()" class="btn btn-danger btn-block">{{nome}}</button>'
+
+         return ddo
+       })
