@@ -1,14 +1,8 @@
 /* global angular */
 
-angular.module('alurapic').controller('FotoController', function ($scope, $http, $routeParams, $resource) {
+angular.module('alurapic').controller('FotoController', function ($scope, $routeParams, recursoFoto) {
   $scope.fotos = {}
   $scope.mensagem = ''
-
-  var recursoFoto = $resource('v1/fotos/:fotoId', null, {
-    update: {
-      method: 'PUT'
-    }
-  })
 
   if ($routeParams.fotoId) {
     recursoFoto.get({fotoId: $routeParams.fotoId},
